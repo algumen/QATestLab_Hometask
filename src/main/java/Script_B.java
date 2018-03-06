@@ -35,38 +35,40 @@ public class Script_B {
 
 
 //        DASHBOARD
-    checkLeftSideMenu(driver, "//li[@id='tab-AdminDashboard']", "/html/body/div[1]/div[2]/div[1]/div/h2");
+    checkLeftSideMenu(driver, "//li[@id='tab-AdminDashboard']", "//*[@class='page-title']");
 
 //        ORDERS
-    checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentOrders']", "/html/body/div[1]/div[2]/div[1]/div/h2");
-
-
+    checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentOrders']", "//*[@class='page-title']");
 
 //        CATALOG
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
+    checkLeftSideMenu(driver, "//*[@id=\"subtab-AdminCatalog\"]", "//*[@class='page-title']");
 
-        WebElement catalogBtn = driver.findElement(By.xpath("//*[@id=\"subtab-AdminCatalog\"]/a"));
-        catalogBtn.click();
 
-        try {Thread.sleep(2000);}
-        catch (InterruptedException e) {e.printStackTrace();}
 
-        titleSubMenu = driver.findElement(By.xpath("//*[@id=\"main-div\"]/div[1]/h2"));
-        titleSubMenuText = titleSubMenu.getText();
-        System.out.println(titleSubMenuText);
-
-        driver.navigate().refresh();
-
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
-
-        titleSubMenu_new = driver.findElement(By.xpath("//*[@id=\"main-div\"]/div[1]/h2"));
-        titleSubMenuNewTextText = titleSubMenu_new.getText();
-
-        if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
-            System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText);
-        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
+//        try {Thread.sleep(1000);}
+//        catch (InterruptedException e) {e.printStackTrace();}
+//
+//        WebElement catalogBtn = driver.findElement(By.xpath("//*[@id=\"subtab-AdminCatalog\"]/a"));
+//        catalogBtn.click();
+//
+//        try {Thread.sleep(2000);}
+//        catch (InterruptedException e) {e.printStackTrace();}
+//
+//        titleSubMenu = driver.findElement(By.xpath("//*[@id=\"main-div\"]/div[1]/h2"));
+//        titleSubMenuText = titleSubMenu.getText();
+//        System.out.println(titleSubMenuText);
+//
+//        driver.navigate().refresh();
+//
+//        try {Thread.sleep(1000);}
+//        catch (InterruptedException e) {e.printStackTrace();}
+//
+//        titleSubMenu_new = driver.findElement(By.xpath("//*[@id=\"main-div\"]/div[1]/h2"));
+//        titleSubMenuNewTextText = titleSubMenu_new.getText();
+//
+//        if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
+//            System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText);
+//        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
 
 //        CUSTOMERS
 //        try {Thread.sleep(1000);}
