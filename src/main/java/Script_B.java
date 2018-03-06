@@ -111,30 +111,30 @@ public class Script_B {
         } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
 
 //        CUSTOMERS
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
-
-        WebElement customersBtn = driver.findElement(By.xpath("//*[@id=\"subtab-AdminParentCustomer\"]/a/span"));
-        customersBtn.click();
-
-        try {Thread.sleep(2000);}
-        catch (InterruptedException e) {e.printStackTrace();}
-
-        titleSubMenu = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
-        titleSubMenuText = titleSubMenu.getText();
-        System.out.println(titleSubMenuText);
-
-        driver.navigate().refresh();
-
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
-
-        titleSubMenu_new = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
-        titleSubMenuNewTextText = titleSubMenu_new.getText();
-
-        if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
-            System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText);
-        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
+//        try {Thread.sleep(1000);}
+//        catch (InterruptedException e) {e.printStackTrace();}
+//
+//        WebElement customersBtn = driver.findElement(By.xpath("//*[@id=\"subtab-AdminParentCustomer\"]/a/span"));
+//        customersBtn.click();
+//
+//        try {Thread.sleep(2000);}
+//        catch (InterruptedException e) {e.printStackTrace();}
+//
+//        titleSubMenu = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
+//        titleSubMenuText = titleSubMenu.getText();
+//        System.out.println(titleSubMenuText);
+//
+//        driver.navigate().refresh();
+//
+//        try {Thread.sleep(1000);}
+//        catch (InterruptedException e) {e.printStackTrace();}
+//
+//        titleSubMenu_new = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
+//        titleSubMenuNewTextText = titleSubMenu_new.getText();
+//
+//        if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
+//            System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText);
+//        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
 
 
 
