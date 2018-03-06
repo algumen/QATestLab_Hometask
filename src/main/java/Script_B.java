@@ -4,13 +4,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.List;
-
 
 public class Script_B {
     public static void main(String[] args) {
         WebDriver driver = initChromeDriver();
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
+
+        WebElement titleSubMenu,titleSubMenu_new;
+        String titleSubMenuText,titleSubMenuNewTextText;
+
 
         try {Thread.sleep(1000);}
         catch (InterruptedException e) {e.printStackTrace();}
@@ -31,58 +33,14 @@ public class Script_B {
         WebElement submitLoginBtn = driver.findElement(By.name("submitLogin"));
         submitLoginBtn.click();
 
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
 
 //        DASHBOARD
-
-        WebElement dashBoardBtn = driver.findElement(By.xpath("//li[@id='tab-AdminDashboard']"));
-        dashBoardBtn.click();
-
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
-
-        WebElement titleSubMenu = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
-        String titleSubMenuText = titleSubMenu.getText();
-        System.out.println(titleSubMenuText);
-
-        driver.navigate().refresh();
-
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
-
-        WebElement titleSubMenu_new = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
-        String titleSubMenuNewTextText = titleSubMenu_new.getText();
-
-        if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
-            System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText);
-        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
+    checkLeftSideMenu(driver, "//li[@id='tab-AdminDashboard']", "/html/body/div[1]/div[2]/div[1]/div/h2");
 
 //        ORDERS
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
+    checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentOrders']", "/html/body/div[1]/div[2]/div[1]/div/h2");
 
-        WebElement ordersBtn = driver.findElement(By.xpath("//*[@id=\"subtab-AdminParentOrders\"]/a"));
-        ordersBtn.click();
 
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
-
-        titleSubMenu = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
-        titleSubMenuText = titleSubMenu.getText();
-        System.out.println(titleSubMenuText);
-
-        driver.navigate().refresh();
-
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
-
-        titleSubMenu_new = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
-        titleSubMenuNewTextText = titleSubMenu_new.getText();
-
-        if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
-            System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText);
-        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
 
 //        CATALOG
         try {Thread.sleep(1000);}
@@ -143,6 +101,34 @@ public class Script_B {
 
         driver.quit();
 
+    }
+
+
+    public static void checkLeftSideMenu(WebDriver driver, String menuButtonLocator, String titleLocator) {
+        try {Thread.sleep(1000);}
+        catch (InterruptedException e) {e.printStackTrace();}
+
+        WebElement dashBoardBtn = driver.findElement(By.xpath(menuButtonLocator));
+        dashBoardBtn.click();
+
+        try {Thread.sleep(1000);}
+        catch (InterruptedException e) {e.printStackTrace();}
+
+        WebElement titleSubMenu = driver.findElement(By.xpath(titleLocator));
+        String titleSubMenuText = titleSubMenu.getText();
+        System.out.println(titleSubMenuText);
+
+        driver.navigate().refresh();
+
+        try {Thread.sleep(1000);}
+        catch (InterruptedException e) {e.printStackTrace();}
+
+        WebElement titleSubMenu_new = driver.findElement(By.xpath(titleLocator));
+        String titleSubMenuNewTextText = titleSubMenu_new.getText();
+
+        if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
+            System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText + "  after page refresh");
+        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
     }
 
     public static WebDriver initChromeDriver() {
