@@ -53,7 +53,7 @@ public class Script_B {
     checkLeftSideMenu(driver, "//li[@id='subtab-AdminStats']", "//*[@class='page-title']");
 
 //        MODULES
-        checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentModulesSf']", "//*[@class='page-title']");
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentModulesSf']", "//*[@id='main-div']/div[1]/h2");
 
 //        DESIGN
         checkLeftSideMenu(driver, "//li[10]/a/span", "//*[@class='page-title']");
