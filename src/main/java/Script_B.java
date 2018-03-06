@@ -41,7 +41,7 @@ public class Script_B {
     checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentOrders']", "//*[@class='page-title']");
 
 //        CATALOG
-    checkLeftSideMenu(driver, "//*[@id=\"subtab-AdminCatalog\"]", "//*[@class='page-title']");
+    checkLeftSideMenu(driver, "//*[@id=\"subtab-AdminCatalog\"]", "//*[@class='title']");
 
 
 
