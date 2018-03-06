@@ -3,7 +3,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import java.util.concurrent.TimeUnit;
 
 
 public class Script_A {
@@ -12,8 +11,9 @@ public class Script_A {
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
 
         try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (Exception e) {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         WebElement emailInput = driver.findElement(By.id("email"));
@@ -30,16 +30,18 @@ public class Script_A {
         submitLoginBtn.click();
 
         try {
-            TimeUnit.SECONDS.sleep(3);
-        } catch (Exception e) {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         WebElement profileImg = driver.findElement(By.xpath("//img[(@class='imgm img-thumbnail')]"));
         profileImg.click();
 
         try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (Exception e) {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         WebElement logoutBtn = driver.findElement(By.id("header_logout"));
