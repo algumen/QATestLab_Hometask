@@ -52,6 +52,26 @@ public class Script_B {
 //        STATISTICS
     checkLeftSideMenu(driver, "//li[@id='subtab-AdminStats']", "//*[@class='page-title']");
 
+//        MODULES
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentModulesSf']", "//*[@class='page-title']");
+
+//        DESIGN
+        checkLeftSideMenu(driver, "//li[10]/a/span", "//*[@class='page-title']");
+
+//        SHIPPING
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentShipping']", "//*[@class='page-title']");
+
+//        PAYMENT
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentPayment']", "//*[@class='page-title']");
+
+//        INTERNATIONAL
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminInternational']", "//*[@class='page-title']");
+
+//        SHOP PARAMETERS
+        checkLeftSideMenu(driver, "//li[@id='subtab-ShopParameters']", "//*[@class='page-title']");
+
+//        ADVANCED PARAMETERS
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminAdvancedParameters']", "//*[@class='page-title']");
 
 
         try {Thread.sleep(1000);}
