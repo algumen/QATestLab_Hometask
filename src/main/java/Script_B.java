@@ -10,12 +10,11 @@ public class Script_B {
         WebDriver driver = initChromeDriver();
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
 
-        WebElement titleSubMenu,titleSubMenu_new;
-        String titleSubMenuText,titleSubMenuNewTextText;
-
-
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement emailInput = driver.findElement(By.id("email"));
         emailInput.click();
@@ -27,30 +26,33 @@ public class Script_B {
         passwordInput.clear();
         passwordInput.sendKeys("Xcg7299bnSmMuRLp9ITw");
 
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement submitLoginBtn = driver.findElement(By.name("submitLogin"));
         submitLoginBtn.click();
 
 
 //        DASHBOARD
-    checkLeftSideMenu(driver, "//li[@id='tab-AdminDashboard']", "//*[@class='page-title']");
+        checkLeftSideMenu(driver, "//li[@id='tab-AdminDashboard']", "//*[@class='page-title']");
 
 //        ORDERS
-    checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentOrders']", "//*[@class='page-title']");
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentOrders']", "//*[@class='page-title']");
 
 //        CATALOG
-    checkLeftSideMenu(driver, "//*[@id='subtab-AdminCatalog']", "//*[@id='main-div']/div[1]/h2");
+        checkLeftSideMenu(driver, "//*[@id='subtab-AdminCatalog']", "//*[@id='main-div']/div[1]/h2");
 
-//        CUSTOMERS //*[@id='subtab-AdminParentCustomer']
-    checkLeftSideMenu(driver, "//li[5]/a/span", "//*[@class='page-title']");
+//        CUSTOMERS
+        checkLeftSideMenu(driver, "//li[5]/a/span", "//*[@class='page-title']");
 
 //        SERVICE
-    checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentCustomerThreads']", "//*[@class='page-title']");
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentCustomerThreads']", "//*[@class='page-title']");
 
 //        STATISTICS
-    checkLeftSideMenu(driver, "//li[@id='subtab-AdminStats']", "//*[@class='page-title']");
+        checkLeftSideMenu(driver, "//li[@id='subtab-AdminStats']", "//*[@class='page-title']");
 
 //        MODULES
         checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentModulesSf']", "//*[@id='main-div']/div[1]/h2");
@@ -74,8 +76,11 @@ public class Script_B {
         checkLeftSideMenu(driver, "//li[@id='subtab-AdminAdvancedParameters']", "//*[@class='page-title']");
 
 
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         driver.quit();
 
@@ -83,14 +88,20 @@ public class Script_B {
 
 
     public static void checkLeftSideMenu(WebDriver driver, String menuButtonLocator, String titleLocator) {
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement dashBoardBtn = driver.findElement(By.xpath(menuButtonLocator));
         dashBoardBtn.click();
 
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement titleSubMenu = driver.findElement(By.xpath(titleLocator));
         String titleSubMenuText = titleSubMenu.getText();
@@ -98,15 +109,20 @@ public class Script_B {
 
         driver.navigate().refresh();
 
-        try {Thread.sleep(1000);}
-        catch (InterruptedException e) {e.printStackTrace();}
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement titleSubMenu_new = driver.findElement(By.xpath(titleLocator));
         String titleSubMenuNewTextText = titleSubMenu_new.getText();
 
         if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
             System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText + "  after page refresh");
-        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
+        } else {
+            System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);
+        }
     }
 
     public static WebDriver initChromeDriver() {
