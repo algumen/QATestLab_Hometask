@@ -44,35 +44,13 @@ public class Script_B {
     checkLeftSideMenu(driver, "//*[@id='subtab-AdminCatalog']", "//*[@id='main-div']/div[1]/h2");
 
 //        CUSTOMERS //*[@id='subtab-AdminParentCustomer']
-checkLeftSideMenu(driver, "//li[5]/a/span", "//*[@class='page-title']");
+    checkLeftSideMenu(driver, "//li[5]/a/span", "//*[@class='page-title']");
 
+//        SERVICE
+    checkLeftSideMenu(driver, "//li[@id='subtab-AdminParentCustomerThreads']", "//*[@class='page-title']");
 
-
-//        CUSTOMERS
-//        try {Thread.sleep(1000);}
-//        catch (InterruptedException e) {e.printStackTrace();}
-//
-//        WebElement customersBtn = driver.findElement(By.xpath("//*[@id=\"subtab-AdminParentCustomer\"]/a/span"));
-//        customersBtn.click();
-//
-//        try {Thread.sleep(2000);}
-//        catch (InterruptedException e) {e.printStackTrace();}
-//
-//        titleSubMenu = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
-//        titleSubMenuText = titleSubMenu.getText();
-//        System.out.println(titleSubMenuText);
-//
-//        driver.navigate().refresh();
-//
-//        try {Thread.sleep(1000);}
-//        catch (InterruptedException e) {e.printStackTrace();}
-//
-//        titleSubMenu_new = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/h2"));
-//        titleSubMenuNewTextText = titleSubMenu_new.getText();
-//
-//        if (titleSubMenuNewTextText.equals(titleSubMenuText)) {
-//            System.out.println(titleSubMenuText + "   is equial  " + titleSubMenuNewTextText);
-//        } else {System.out.println(titleSubMenuText + "   is NOT equial   " + titleSubMenuNewTextText);}
+//        STATISTICS
+    checkLeftSideMenu(driver, "//li[@id='subtab-AdminStats']", "//*[@class='page-title']");
 
 
 
