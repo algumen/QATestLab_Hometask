@@ -1,6 +1,8 @@
 package HomeTaskLecture3;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -17,16 +19,19 @@ public class GeneralActions {
 
     /**
      * Logs in to Admin Panel.
+     *
      * @param login
      * @param password
      */
     public void login(String login, String password) {
+
         // TODO implement logging in to Admin Panel
         throw new UnsupportedOperationException();
     }
 
     /**
      * Adds new category in Admin Panel.
+     *
      * @param categoryName
      */
     public void createCategory(String categoryName) {
@@ -38,12 +43,14 @@ public class GeneralActions {
     /**
      * Waits until page loader disappears from the page
      */
-    public void waitForContentLoad() {
-        // TODO implement generic method to wait until page content is loaded
 
-        // wait.until(...);
-        // ...
+
+    public void waitForContentLoad (By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
     }
+
+
 
 }
 

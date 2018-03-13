@@ -13,7 +13,7 @@ public class Script_A {
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

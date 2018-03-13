@@ -20,7 +20,7 @@ public class Properties {
 
     /**
      *
-     * @return Website backend (ULR of the Admin Panel.)
+     * @return Website backend (URL of the Admin Panel.)
      */
     public static String getBaseAdminUrl() {
         return System.getProperty(EnvironmentVariables.BASE_ADMIN_URL.toString(), DEFAULT_BASE_ADMIN_URL);

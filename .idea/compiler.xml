@@ -9,8 +9,8 @@
         <module name="QATestLab_Hometask" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="QATestLab_Hometask" target="9" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="QATestLab_Hometask" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
